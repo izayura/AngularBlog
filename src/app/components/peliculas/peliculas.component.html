@@ -1,0 +1,32 @@
+<app-slider [name]="'Peliculas'" [size]="'small'"></app-slider>
+<div class="center">
+    <section id="content">
+        <h1 class="subheader">Movies</h1>
+        <p>{{date | date: 'fullDate'}}</p>
+        <div *ngIf="favMovie">
+            <h3>
+                Favorite Movie: {{favMovie.title | uppercase}}
+            </h3>
+            <h4>{{favMovie.year | isEven}}</h4>
+        </div>
+        <!-- <h2>{{titulo}}</h2>
+        <button (click)="cambiarTitulo()">Click Me</button>
+        
+        <h2>Number of movies</h2>
+        {{movies.length}}
+        
+        <div *ngIf='movies.length <=3'>There are few movies</div>
+        <div *ngIf='movies.length > 3'>There are plenty of movies</div>
+        
+        <h2 class="subheader">List of Movies</h2>-->
+        <div id="articles" *ngIf="movies">
+            <div *ngFor="let movie of movies; let i=index">
+                <app-movie
+                [movie]="movie"
+                (SelectFav)="showFavs($event)" ></app-movie>
+            </div>
+        </div>    
+    </section>
+    <app-sidebar></app-sidebar> 
+</div>
+

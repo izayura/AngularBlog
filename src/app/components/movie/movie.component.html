@@ -1,0 +1,19 @@
+<article class="article-item">
+    <div class="image-movie">
+        <img src="{{movie.image}}" alt="{{movie.title}} poster">
+    </div>
+    <h2>{{movie.title}}</h2>
+    <button (click)="select($event, movie)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png" alt="" style="width: 20px; height: 20px;">
+    </button>
+    <span class="year"
+        [ngClass]="{
+            'year-green': movie.year >= 2008,
+            'year-red': movie.year < 2008
+        }">
+        {{movie.year}}
+    </span>
+    <a href="article.html">Read more</a>
+    
+    <div class="clearfix"></div>
+</article>

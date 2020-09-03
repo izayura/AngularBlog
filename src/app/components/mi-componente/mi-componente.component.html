@@ -1,0 +1,10 @@
+<div>
+    <h1>{{titulo}}</h1>
+    <p>{{comentario}}</p>
+    <p>Hola soy un parrafo</p>
+    <button (click)='ocultarPeliculas()'>Hide</button>
+
+    <div *ngIf='mostrarPeliculas'>
+        <app-peliculas></app-peliculas>
+    </div>
+</div>
