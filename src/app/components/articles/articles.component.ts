@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Article } from 'src/app/models/article';
+import { Global } from '../../services/global';
 
 @Component({
   selector: 'app-articles',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
-
-  constructor() { }
+  public url:string;
+  @Input() articles: Article[];
+  
+  constructor() { 
+    this.url=Global.url;
+  }
 
   ngOnInit(): void {
+    console.log(this.articles);
   }
 
 }

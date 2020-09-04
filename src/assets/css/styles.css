@@ -184,12 +184,32 @@ body{
     border: none;
     cursor: pointer;
     transition: 300ms all;
+    text-align: center;
 }
 .btn-success{
     background: rgb(42, 206, 42);
 }
+.btn-warning{
+    background: rgb(255, 206, 44);
+    color: white !important;
+    text-decoration: none;
+}
+.btn-danger{
+    background: rgb(255, 33, 33);
+    color: white !important;
+    text-decoration: none;
+}
 .btn-success:hover{
     background: black;
+}
+.btn-warning:hover,
+.btn-danger:hover{
+    transition: 300ms all;
+    opacity: 0.8;
+    color: #444 !important;
+}
+.buttons{
+    margin-top: 30px;
 }
 .mid-form{
     width: 50%;
@@ -204,6 +224,7 @@ body{
     margin-top: 10px;
 }
 input[type="text"],
+input[type="file"],
 textarea{
     width: 100%;
     min-height: 30px;
@@ -214,8 +235,18 @@ textarea{
     transition: 300ms all;
 }
 input[type="text"]:focus,
+input[type="file"]:focus,
 textarea:focus{
     box-shadow: 0px 0px 3px #ccc inset;
+}
+.btn.up_btn.afu-attach-pin{
+    width: 100% !important;
+    display: block !important;
+    max-width: 90% !important;
+    margin-top: 15px;
+}
+.image-thumb img{
+    width: 200px;
 }
 textarea{
     width: 100%;

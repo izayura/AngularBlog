@@ -18,7 +18,39 @@ export class ArticleService{
         return "I am the Article Service";
     }
 
-    getArticles(): Observable<any> {
-        return this._http.get(this.url+'articles');
+    getArticles(last:any=null): Observable<any> {
+        let articles='articles';
+        if(last != null){
+            articles='articles/true';
+        }
+        return this._http.get(this.url+articles);
+    }
+
+    getArticle(articleId): Observable<any>{
+        return this._http.get(this.url+'article/'+articleId);
+    }
+
+    search(searchString): Observable<any>{
+        return this._http.get(this.url+'/search/'+searchString) ;
+    }
+
+    create(article): Observable<any>{
+        let params=JSON.stringify(article);
+        //con headers podriamos configurar content-type,
+        //las autorizaciones la cabezera,etc
+        let headers=new HttpHeaders().set('Content-Type', 'application/json');
+        //Peticion AJAX
+        return this._http.post(this.url+'save', params, {headers:headers});
+    }
+
+    update(id, article): Observable<any>{
+        let params=JSON.stringify(article);
+        let headers=new HttpHeaders().set('Content-Type','application/json');
+        return this._http.put(this.url+'/article/'+id, params, {headers:headers});
+    }
+
+    delete(id): Observable<any>{
+        let headers=new HttpHeaders().set('Content-Type','application/json');
+        return this._http.delete(this.url+'/article/'+id, {headers:headers});
     }
 }

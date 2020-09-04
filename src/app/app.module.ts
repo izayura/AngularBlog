@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing, appRoutingProviders } from './app.routing';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
 
 import { AppComponent } from './app.component';
 import { MiComponente } from './components/mi-componente/mi-componente.component';
@@ -20,6 +21,12 @@ import { isEvenPipe } from './pipes/isEven.pipe';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ArticlesComponent } from './components/articles/articles.component';
+import { MomentModule } from 'angular2-moment';
+import { ArticleComponent } from './components/article/article.component';
+import { SearchComponent } from './components/search/search.component';
+import { CreateArticleComponent } from './components/create-article/create-article.component';
+import { EditArticleComponent } from './components/edit-article/edit-article.component';
+
 
 @NgModule({
   declarations: [
@@ -38,13 +45,19 @@ import { ArticlesComponent } from './components/articles/articles.component';
     ErrorComponent,
     MovieComponent,
     isEvenPipe,
-    ArticlesComponent
+    ArticlesComponent,
+    ArticleComponent,
+    SearchComponent,
+    CreateArticleComponent,
+    EditArticleComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MomentModule,
+    AngularFileUploaderModule
     ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
